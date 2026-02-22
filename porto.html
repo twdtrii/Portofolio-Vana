@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ivana Tita | Business Management Portfolio</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
+
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            overflow-x: hidden;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, #831843, #BE185D);
+        }
+
+        /* Custom Floating Animation for Profile Image */
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(6deg); }
+            50% { transform: translateY(-15px) rotate(8deg); }
+            100% { transform: translateY(0px) rotate(6deg); }
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        /* Navbar Hover Effect */
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #BE185D;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Smooth Card Hover */
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .card-hover:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+
+         /* Floating lembut */
+        @keyframes floatSlow {
+        0%,100% { transform: translateY(0); }
+        50% { transform: translateY(-14px); }
+        }
+        .animate-float-slow {
+        animation: floatSlow 6s ease-in-out infinite;
+        }
+
+        /* Glow pulse elegan */
+        @keyframes pulseSoft {
+        0%,100% { opacity: .18; transform: scale(1); }
+        50% { opacity: .35; transform: scale(1.08); }
+        }
+        .animate-pulse-soft {
+        animation: pulseSoft 4s ease-in-out infinite;
+        }
+
+        /* Bubble background */
+        .bubble {
+        position: absolute;
+        bottom: -40px;
+        border-radius: 9999px;
+        background: rgba(255,255,255,0.18);
+        filter: blur(1px);
+        animation: rise 12s infinite ease-in;
+        }
+
+        .bubble.small { width:10px; height:10px; }
+        .bubble.medium { width:16px; height:16px; }
+        .bubble.large { width:22px; height:22px; }
+
+        @keyframes rise {
+        from {
+            transform: translateY(0) scale(1);
+            opacity: .4;
+        }
+        to {
+            transform: translateY(-520px) scale(1.5);
+            opacity: 0;
+        }
+        }
+    </style>
+</head>
+
+<body class="bg-[#FFF7FB] text-slate-800">
+
+<nav class="fixed w-full bg-white/90 backdrop-blur-md z-50 shadow-sm border-b border-pink-100">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+        <div class="text-xl font-bold text-pink-700 tracking-wide">
+            Ivana Tita Dianamurti
+        </div>
+
+        <div class="hidden md:flex space-x-8 font-medium text-gray-600">
+            <a href="#home" class="nav-link hover:text-pink-600">Beranda</a>
+            <a href="#about" class="nav-link hover:text-pink-600">Profil</a>
+            <a href="#experience" class="nav-link hover:text-pink-600">Pengalaman</a>
+            <a href="#activities" class="nav-link hover:text-pink-600">Dokumentasi</a>
+            <a href="#skills" class="nav-link hover:text-pink-600">Keahlian</a>
+        </div>
+
+        <a href="mailto:ivanatitadianamurti@gmail.com"
+           class="bg-pink-600 text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-pink-700 transition-all duration-300 transform hover:scale-105 shadow">
+            Kontak Saya
+        </a>
+    </div>
+</nav>
+
+<section id="home" class="hero-gradient min-h-screen flex items-center pt-20">
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+        <div class="text-white" data-aos="fade-right" data-aos-duration="1200">
+            <span class="bg-pink-400/20 text-pink-200 px-4 py-1 rounded-full text-sm font-semibold tracking-wide uppercase">
+                Magister Manajemen
+            </span>
+
+            <h1 class="text-5xl md:text-6xl font-bold mt-6 leading-tight">
+                Ivana Tita <span class="text-pink-300">Dianamurti</span>
+            </h1>
+
+            <p class="text-pink-100 mt-6 text-lg leading-relaxed">
+                Profesional berpengalaman dalam manajemen operasional, kepemimpinan tim, dan pengembangan strategi bisnis.
+            </p>
+
+            <div class="mt-10 flex gap-4">
+                <a href="#experience" class="bg-pink-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-pink-700 transition shadow-lg">
+                    Lihat Portofolio
+                </a>
+                <a href="#about" class="border border-pink-200 text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-pink-700 transition">
+                    Pelajari Profil
+                </a>
+            </div>
+        </div>
+
+        <!-- <div class="hidden md:block" data-aos="zoom-in-left" data-aos-duration="1500">
+            <div class="relative w-80 h-96 mx-auto animate-float">
+                <div class="absolute inset-0 bg-pink-400 rounded-3xl opacity-20"></div>
+                <div class="absolute inset-0 overflow-hidden rounded-3xl border-4 border-white/20 shadow-2xl">
+                    <img src="img/fotoprofe.png" class="w-full h-full object-cover" alt="Ivana Tita">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                        <p class="text-white font-semibold text-sm">Magister Manajemen</p>
+                        <p class="text-pink-200 text-xs">Ivana Tita Dianamurti</p>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+        <div class="relative w-[420px] h-[420px] mx-auto flex items-center justify-center">
+
+            <!-- bubbles -->
+            <span class="bubble small left-[15%]" style="animation-duration:9s"></span>
+            <span class="bubble medium left-[70%]" style="animation-duration:12s"></span>
+            <span class="bubble large left-[45%]" style="animation-duration:11s"></span>
+
+            <!-- glow pulse -->
+            <div class="absolute inset-0 bg-pink-400 rounded-full opacity-20 animate-pulse-soft"></div>
+
+            <!-- circle frame -->
+            <div class="relative w-full h-full overflow-hidden rounded-full border-4 border-white/20 shadow-2xl animate-float-slow">
+
+                <img src="img/fotoprofesi.jpeg"
+                    class="w-full h-full object-cover scale-110"
+                    alt="Ivana Tita">
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="py-24 bg-white">
+    <div class="max-w-4xl mx-auto px-6 text-center" data-aos="fade-up">
+        <h2 class="text-3xl font-bold mb-8 text-pink-700">Ringkasan Profil</h2>
+        <p class="text-lg text-gray-600 leading-relaxed italic">
+            "Berpengalaman sebagai supervisor operasional dalam mengelola tim,
+            operasional harian, serta pengembangan bisnis dengan orientasi pada solusi dan kepuasan pelanggan."
+        </p>
+    </div>
+</section>
+
+<section id="experience" class="py-24 bg-pink-50">
+    <div class="max-w-6xl mx-auto px-6 text-center mb-12" data-aos="fade-up">
+        <h2 class="text-3xl font-bold text-pink-700">Pengalaman Kerja</h2>
+        <p class="text-gray-500 mt-2">Rekam jejak profesional dalam manajemen dan operasional.</p>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8">
+        <div class="bg-white p-8 rounded-2xl shadow-sm border card-hover" data-aos="fade-up" data-aos-delay="100">
+            <span class="text-pink-600 font-semibold text-sm">2024 - 2026</span>
+            <h3 class="text-xl font-bold mt-2">Supervisor Operasional</h3>
+            <p class="text-gray-500 mb-4">PT Barokah Hisyam Bersaudara</p>
+            <ul class="text-sm text-gray-600 space-y-2">
+                <li><i class="fas fa-check-circle text-pink-500 mr-2"></i>Mengelola operasional & tim</li>
+                <li><i class="fas fa-check-circle text-pink-500 mr-2"></i>Rekrutmen & pelatihan</li>
+                <li><i class="fas fa-check-circle text-pink-500 mr-2"></i>Business development</li>
+            </ul>
+        </div>
+
+        <div class="bg-white p-8 rounded-2xl shadow-sm border card-hover" data-aos="fade-up" data-aos-delay="300">
+            <span class="text-pink-600 font-semibold text-sm">2023 - 2024</span>
+            <h3 class="text-xl font-bold mt-2">CS Cashier</h3>
+            <p class="text-gray-500 mb-4">PT Mataram Setia Tri Tunggal</p>
+            <ul class="text-sm text-gray-600 space-y-2">
+                <li><i class="fas fa-check-circle text-pink-500 mr-2"></i>Pengelolaan transaksi</li>
+                <li><i class="fas fa-check-circle text-pink-500 mr-2"></i>Pelayanan pelanggan</li>
+                <li><i class="fas fa-check-circle text-pink-500 mr-2"></i>Promosi produk</li>
+            </ul>
+        </div>
+
+        <div class="bg-white p-8 rounded-2xl shadow-sm border card-hover" data-aos="fade-up" data-aos-delay="500">
+            <span class="text-pink-600 font-semibold text-sm">2019 - 2023</span>
+            <h3 class="text-xl font-bold mt-2">Sales Associate</h3>
+            <p class="text-gray-500 mb-4">PT Matahari Dept Store Tbk</p>
+            <ul class="text-sm text-gray-600 space-y-2">
+                <li><i class="fas fa-check-circle text-pink-500 mr-2"></i>Pencapaian target</li>
+                <li><i class="fas fa-check-circle text-pink-500 mr-2"></i>Manajemen inventaris</li>
+                <li><i class="fas fa-check-circle text-pink-500 mr-2"></i>Visual merchandising</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section id="activities" class="py-24 bg-white overflow-hidden">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-16" data-aos="fade-down">
+            <h2 class="text-3xl text-pink-700 font-bold">Dokumentasi & Histori Kegiatan</h2>
+            <p class="text-gray-500 mt-4 max-w-2xl mx-auto">
+                Potret profesional dalam mengelola operasional harian, pengembangan bisnis, dan kepemimpinan tim.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div class="group relative overflow-hidden rounded-2xl shadow-lg border border-gray-100" data-aos="zoom-in-right">
+                <img src="img/kegiatan1.jpeg" class="w-full h-72 object-cover transition duration-700 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    <h3 class="text-white font-bold text-xl">Growing the Business</h3>
+                    <p class="text-white text-xs italic mt-2 text-pink-200">"Fokus pada strategi promosi dan ekspansi brand."</p>
+                </div>
+            </div>
+
+            <div class="group relative overflow-hidden rounded-2xl shadow-lg border border-gray-100" data-aos="zoom-in-left">
+                <img src="img/kegiatan2.jpeg" class="w-full h-72 object-cover transition duration-700 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    <h3 class="text-white font-bold text-xl">Behind the Scenes: Daily Ops</h3>
+                    <p class="text-white text-xs italic mt-2 text-pink-200">"Memastikan standar operasional berjalan mulus harian."</p>
+                </div>
+            </div>
+
+            <div class="group relative overflow-hidden rounded-2xl shadow-lg border border-gray-100" data-aos="zoom-in-right">
+                <img src="img/kegiatan3.jpeg" class="w-full h-72 object-cover transition duration-700 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    <h3 class="text-white font-bold text-xl">Solid Team</h3>
+                    <p class="text-white text-xs italic mt-2 text-pink-200">"Membangun sinergi dan lingkungan kerja suportif."</p>
+                </div>
+            </div>
+
+            <div class="group relative overflow-hidden rounded-2xl shadow-lg border border-gray-100" data-aos="zoom-in-left">
+                <video src="vid/vid1.mp4" class="w-full h-72 object-cover" autoplay loop muted playsinline></video>
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent flex flex-col justify-end p-6">
+                    <h3 class="text-white font-bold text-xl">Business Development</h3>
+                    <p class="text-white text-xs italic mt-2 text-pink-200">"Strategi promosi dan pengelolaan media sosial."</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="skills" class="py-24 bg-pink-50">
+    <div class="max-w-6xl mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-12 text-pink-700" data-aos="fade-up">Keahlian & Kompetensi</h2>
+
+        <div class="grid md:grid-cols-2 gap-12">
+            <div data-aos="fade-right">
+                <h3 class="text-xl font-bold mb-6 flex items-center"><i class="fas fa-tools mr-3 text-pink-600"></i>Hard Skills</h3>
+                <div class="space-y-6">
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span class="font-medium text-gray-700">Microsoft Office & Google Workspace</span>
+                            <span class="text-pink-600 font-bold">95%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2.5">
+                            <div class="bg-pink-600 h-2.5 rounded-full" style="width: 0%" data-aos="slide-right" data-aos-delay="200" data-aos-offset="0"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span class="font-medium text-gray-700">HRIS & Administrasi</span>
+                            <span class="text-pink-600 font-bold">90%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2.5">
+                            <div class="bg-pink-600 h-2.5 rounded-full" style="width: 0%" data-aos="slide-right" data-aos-delay="400" data-aos-offset="0"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div data-aos="fade-left">
+                <h3 class="text-xl font-bold mb-6 flex items-center"><i class="fas fa-brain mr-3 text-pink-600"></i>Soft Skills</h3>
+                <div class="flex flex-wrap gap-3">
+                    <span class="bg-white border border-pink-200 text-pink-700 px-4 py-2 rounded-lg shadow-sm hover:bg-pink-600 hover:text-white transition cursor-default">Leadership</span>
+                    <span class="bg-white border border-pink-200 text-pink-700 px-4 py-2 rounded-lg shadow-sm hover:bg-pink-600 hover:text-white transition cursor-default">Problem Solving</span>
+                    <span class="bg-white border border-pink-200 text-pink-700 px-4 py-2 rounded-lg shadow-sm hover:bg-pink-600 hover:text-white transition cursor-default">Komunikasi</span>
+                    <span class="bg-white border border-pink-200 text-pink-700 px-4 py-2 rounded-lg shadow-sm hover:bg-pink-600 hover:text-white transition cursor-default">Teamwork</span>
+                    <span class="bg-white border border-pink-200 text-pink-700 px-4 py-2 rounded-lg shadow-sm hover:bg-pink-600 hover:text-white transition cursor-default">Time Management</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="bg-[#831843] text-pink-100 py-16">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold mb-4 text-white" data-aos="zoom-in">Mari Berdiskusi</h2>
+        <p class="mb-8 text-pink-200 opacity-80" data-aos="fade-up">Siap memberikan kontribusi maksimal untuk pertumbuhan perusahaan Anda.</p>
+
+        <div class="flex justify-center gap-8 text-3xl mb-10">
+            <a href="mailto:ivanatitadianamurti@gmail.com" class="hover:text-white hover:scale-125 transition transform"><i class="fas fa-envelope"></i></a>
+            <a href="tel:0882006265679" class="hover:text-white hover:scale-125 transition transform"><i class="fas fa-phone"></i></a>
+            <a href="https://www.instagram.com/ivanavee?igsh=NGg5cjV2cjN3YWF2&utm_source=qr" target="_blank" class="hover:text-white hover:scale-125 transition transform"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/ivanatitadnmrt19" target="_blank" class="hover:text-white hover:scale-125 transition transform"><i class="fab fa-linkedin"></i></a>
+        </div>
+
+        <div class="border-t border-pink-800 pt-8">
+            <p class="text-sm text-pink-300">
+                © 2026 Ivana Tita Dianamurti | Magister Manajemen Portfolio
+            </p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Initialize Animations
+    AOS.init({
+        duration: 800,
+        once: true,
+        mirror: false,
+        offset: 120,
+    });
+
+    // Special trigger for progress bars after animation
+    window.addEventListener('scroll', () => {
+        const skillsSection = document.getElementById('skills');
+        const progressBars = document.querySelectorAll('[data-aos="slide-right"]');
+        
+        let sectionPos = skillsSection.getBoundingClientRect().top;
+        let screenPos = window.innerHeight / 1.3;
+
+        if (sectionPos < screenPos) {
+            progressBars[0].style.width = "95%";
+            progressBars[1].style.width = "90%";
+        }
+    });
+</script>
+
+</body>
+</html>
